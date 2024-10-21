@@ -15,6 +15,6 @@ class JobExperience {
     required this.company,
     required this.startDate,
     required this.endDate,
-    required this.bulletPoints,
+    this.bulletPoints = const [],
   });
 }

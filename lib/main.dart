@@ -20,6 +20,7 @@ class Portfolio extends StatelessWidget {
       ],
       child: const MaterialApp(
         home: HomePage(),
+        debugShowCheckedModeBanner: false,
       ),
     );
   }

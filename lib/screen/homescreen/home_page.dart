@@ -110,9 +110,9 @@ class HomePage extends StatelessWidget {
                                                 padding:
                                                     const EdgeInsets.all(10),
                                                 child: AutoSizeText(
-                                                  'HighCoder',
+                                                  'Anas Nadeem',
                                                   style: GoogleFonts.exo(
-                                                      fontSize: 35,
+                                                      fontSize: 30,
                                                       color: Colors.white,
                                                       fontWeight:
                                                           FontWeight.bold),
@@ -141,7 +141,7 @@ class HomePage extends StatelessWidget {
                               alignment: Alignment.topCenter,
                               child: FrostedWidget(
                                 onPressed: () {
-                                  currentState.launchInBrowser(topMate);
+                                  currentState.launchInBrowser(linkedIn);
                                 },
                                 childW: Center(
                                   child: Container(
@@ -151,11 +151,11 @@ class HomePage extends StatelessWidget {
                                           MainAxisAlignment.center,
                                       children: [
                                         Image.asset(
-                                          "assets/icons/topMate.png",
-                                          width: 50 *
+                                          "assets/icons/linkedin.png",
+                                          width: 70 *
                                               theme.widthRatio *
                                               theme.heightRatio,
-                                          height: 50 *
+                                          height: 70 *
                                               theme.widthRatio *
                                               theme.heightRatio,
                                         ),
@@ -281,7 +281,7 @@ class HomePage extends StatelessWidget {
                                             MainAxisAlignment.center,
                                         children: [
                                           AutoSizeText(
-                                            '"Don\'t run after success run after perfection success will follow."',
+                                            'The only way to do great work is to love what you do.',
                                             style: GoogleFonts.inter(
                                                 // fontSize: 30,
                                                 color: Colors.white,
@@ -293,7 +293,7 @@ class HomePage extends StatelessWidget {
                                           Align(
                                               alignment: Alignment.bottomRight,
                                               child: AutoSizeText(
-                                                '-Baba Ranchhoddas',
+                                                '-Steve Jobs',
                                                 style: GoogleFonts.inter(
                                                     // fontSize: 12,
                                                     color: Colors.white
