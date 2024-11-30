@@ -44,29 +44,55 @@ class _CardvaultState extends State<VerseVibe> {
                     backgroundImage: AssetImage('assets/icons/versevibe.png'),
                   ),
                 ),
-                Container(
-                  alignment: Alignment.center,
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-                  child: InkWell(
-                    onTap: () async {
-                      const url = 'https://github.com/anas4519/VerseVibe';
-                      if (await canLaunch(url)) {
-                        await launch(url);
-                      } else {
-                        throw 'Could not launch $url';
-                      }
-                    },
-                    child: Text(
-                      "GitHub Link",
-                      style: GoogleFonts.openSans(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue),
+                Column(
+                  children: [
+                    const SizedBox(height: 20),
+                    Container(
+                      alignment: Alignment.center,
+                      child: InkWell(
+                        onTap: () async {
+                          const url =
+                              'https://play.google.com/store/apps/details?id=com.versevibe.versevibe';
+                          if (await canLaunch(url)) {
+                            await launch(url);
+                          } else {
+                            throw 'Could not launch $url';
+                          }
+                        },
+                        child: Text(
+                          "Play Store Link",
+                          style: GoogleFonts.openSans(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue),
+                        ),
+                      ),
                     ),
-                  ),
+                    const SizedBox(height: 8,),
+                    Container(
+                      alignment: Alignment.center,
+                      child: InkWell(
+                        onTap: () async {
+                          const url = 'https://github.com/anas4519/VerseVibe';
+                          if (await canLaunch(url)) {
+                            await launch(url);
+                          } else {
+                            throw 'Could not launch $url';
+                          }
+                        },
+                        child: Text(
+                          "GitHub Link",
+                          style: GoogleFonts.openSans(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 20)
+                  ],
                 ),
-                Text(
+                SelectableText(
                   "VerseVibe is a sophisticated and modern blogging platform, designed to offer users a clean, intuitive interface and a seamless writing experience. Built with a focus on both functionality and aesthetics, VerseVibe allows users to create, manage, and share their blog posts effortlessly. The application also integrates cutting-edge AI features that enhance the blogging experience, making it much more than just a standard blogging platform.\n\n"
                   "At the heart of VerseVibe’s backend, Node.js is implemented for efficient, fast, and secure user authentication using JWT tokens. This setup has significantly improved the authentication speed by 50%, ensuring a smooth login and registration process. In addition to the robust authentication system, VerseVibe incorporates a powerful REST API, allowing users to interact with the platform efficiently. Image uploads are seamlessly handled using Multer, making it easy for bloggers to add visuals to their posts, further enhancing the content creation process.\n\n"
                   "For database management, VerseVibe relies on MongoDB, providing scalable and efficient storage for user data, blog posts, and other content. The application is optimized for fast performance, achieving a 30% reduction in data retrieval times, ensuring that users can access their content quickly and without delays, even as the platform scales.\n\n"
