@@ -19,7 +19,7 @@ class ScreenWrapper extends StatelessWidget {
           if (!instance.isMainScreen) {
             return Container(
               width: double.infinity,
-              decoration: const BoxDecoration(color: Colors.white),
+              decoration: const BoxDecoration(color: Color(0xFF0A0A0A)),
               padding: const EdgeInsets.only(top: 30),
               // height: 50,
               child: Padding(
@@ -29,12 +29,13 @@ class ScreenWrapper extends StatelessWidget {
                   children: [
                     Text(
                       instance.title ?? "",
-                      style: GoogleFonts.inter(fontSize: 18),
+                      style:
+                          GoogleFonts.inter(fontSize: 18, color: Colors.white),
                     ),
                     IconButton(
                       icon: const Icon(
                         Icons.close,
-                        color: Colors.black,
+                        color: Colors.white,
                       ),
                       onPressed: () {
                         instance.changePhoneScreen(

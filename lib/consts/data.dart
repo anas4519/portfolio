@@ -268,7 +268,7 @@ const String resumeLink =
 const String email = "nadeemanas617@gmail.com";
 const String emailLink = "mailto:nadeemanas617@gmail.com";
 String introduction =
-    "Welcome to my portfolio website, this website is highly inspired High Coder and Pawan Kumar.\n\n I am a 3rd year B.Tech student in Information Technology, seeking a software development internship to leverage skills in Java, Flutter and Dart.\nEnthusiastic and fast learner, eager to apply academic knowledge and problem-solving abilities to contribute to innovative projects. With a strong programming foundation, proactive attitude, and openness to learning new technologies, I aim to support and drive efficiency within the development team.\n\nYou can check out my projects using the other apps on the Home Screen";
+    "Welcome to my portfolio website, this website is highly inspired High Coder and Pawan Kumar.\n\n I am a 3rd year B.Tech student in Information Technology, seeking a software development internship to leverage skills in Java, Flutter and Dart.\nEnthusiastic and fast learner, eager to apply academic knowledge and problem-solving abilities to contribute to innovative projects. With a strong programming foundation, proactive attitude, and openness to learning new technologies, I aim to support and drive efficiency within the development team.\n\nYou can check out my projects using the other apps on the Home Screen.";
 
 List<SkillsModel> skills = [
   SkillsModel(skillName: "Flutter", colorS: Colors.blue, iconPath: "random"),
