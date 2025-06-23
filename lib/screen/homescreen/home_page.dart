@@ -11,7 +11,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import '../../widgets/frosted_container.dart';
-import '../../widgets/rain_cloud.dart';
 import 'phone_screen_wrapper.dart';
 
 class HomePage extends StatelessWidget {
@@ -38,330 +37,459 @@ class HomePage extends StatelessWidget {
             selector: (context, provider) => provider.bgGradient,
             builder: (context, _, __) {
               return Container(
-                decoration: BoxDecoration(gradient: currentState.bgGradient),
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                      colors: [
+                        Color(0xFF1A1A1A), // Very Dark Grey
+                        Color(0xFF000000), // Absolute Black
+                      ]),
+                ),
               );
             },
           ),
-          size.height > 600
-              ? const Rain(
-                  oposite: false,
-                  top: 300,
-                )
-              : Container(),
-          Selector<CurrentState, String>(
-            selector: (context, provider) => provider.selectedCloud,
-            builder: (context, _, __) {
-              return SvgPicture.asset(
-                currentState.selectedCloud,
-                // width: double.infinity,
-                height: size.height,
-                fit: BoxFit.cover,
-              );
-            },
+          SingleChildScrollView(
+            child: phone
+                ? Column(
+                    children: [
+                      SizedBox(height: 25 * theme.heightRatio),
+                      // Centered phone screen for mobile
+                      _buildCenteredPhoneScreen(size, currentState, theme),
+                      SizedBox(height: 25 * theme.heightRatio),
+                      // Device selection buttons
+                      _buildDeviceSelectionButtons(currentState),
+                      SizedBox(height: 30 * theme.heightRatio),
+                    ],
+                  )
+                : _buildDesktopLayout(size, currentState, theme),
           ),
-          size.height > 600
-              ? const Rain(
-                  oposite: true,
-                  top: 50,
-                )
-              : Container(),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const SizedBox(
-                height: 10,
-              ),
-              Row(
+        ],
+      ),
+    );
+  }
+
+  Widget _buildDesktopLayout(
+      Size size, CurrentState currentState, ThemeProvider theme) {
+    return SizedBox(
+      height: size.height,
+      child: Row(
+        children: [
+          // Left side - Phone screen (centered)
+          Expanded(
+            flex: 1,
+            child: Center(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  /// Left side frosted Containers
-
-                  phone
-                      ? Container()
-                      : Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Transform(
-                              transform: Matrix4.identity()
-                                ..setEntry(3, 2, 0.01)
-                                ..rotateY(-0.06),
-                              alignment: Alignment.bottomCenter,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                margin: EdgeInsets.only(
-                                    top: 0, bottom: 10 * theme.heightRatio),
-                                child: FrostedWidget(
-                                  childW: Container(
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                    child: Transform(
-                                      transform: Matrix4.identity()
-                                        ..setEntry(3, 2, 0.01)
-                                        ..rotateY(-0.06),
-                                      alignment: FractionalOffset.center,
-                                      child: Row(
-                                        children: [
-                                          Flexible(
-                                            child: Center(
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(10),
-                                                child: AutoSizeText(
-                                                  'Anas Nadeem',
-                                                  style: GoogleFonts.exo(
-                                                      fontSize: 30,
-                                                      color: Colors.white,
-                                                      fontWeight:
-                                                          FontWeight.bold),
-                                                  maxFontSize: 35,
-                                                  minFontSize: 15,
-                                                  maxLines: 1,
-                                                ).animate().fadeIn(
-                                                    delay: .8.seconds,
-                                                    duration: .7.seconds),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                  height: 395 * theme.heightRatio,
-                                  width: 247.5 * theme.widthRatio,
-                                ),
-                              ),
-                            ),
-                            Transform(
-                              transform: Matrix4.identity()
-                                ..setEntry(3, 2, 0.009999)
-                                ..rotateY(-0.07),
-                              alignment: Alignment.topCenter,
-                              child: FrostedWidget(
-                                onPressed: () {
-                                  currentState.launchInBrowser(linkedIn);
-                                },
-                                childW: Center(
-                                  child: Container(
-                                    padding: const EdgeInsets.all(10),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Image.asset(
-                                          "assets/icons/linkedin.png",
-                                          width: 70 *
-                                              theme.widthRatio *
-                                              theme.heightRatio,
-                                          height: 70 *
-                                              theme.widthRatio *
-                                              theme.heightRatio,
-                                        ),
-                                        SizedBox(
-                                          height: 10 * theme.heightRatio,
-                                        ),
-                                        Flexible(
-                                            child: AutoSizeText(
-                                          "Let's connect!",
-                                          style: GoogleFonts.exo(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 28 *
-                                                theme.widthRatio *
-                                                theme.heightRatio,
-                                          ),
-                                          textAlign: TextAlign.center,
-                                          maxFontSize: 28,
-                                          minFontSize: 15,
-                                        )),
-                                      ],
-                                    ).animate().fadeIn(
-                                        delay: 1.seconds, duration: .7.seconds),
-                                  ),
-                                ),
-                                height: 175.5 * theme.heightRatio,
-                                width: 245 * theme.widthRatio,
-                              ),
-                            ),
-                          ],
-                        ),
-
-                  // main mobile screen
                   SizedBox(
-                    height: size.height - 100,
+                    height: size.height - 200,
                     child: Consumer<CurrentState>(
-                      // selector: (context, provider) => provider.currentDevice,
                       builder: (context, _, __) {
                         return DeviceFrame(
                           device: currentState.currentDevice,
                           screen: Container(
-                              decoration: BoxDecoration(
-                                  gradient: currentState.bgGradient),
-                              child: ScreenWrapper(
-                                  childG: currentState.currentScreen)),
+                            decoration: const BoxDecoration(
+                              gradient: LinearGradient(
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                  colors: [
+                                    Color(0xFF3A3A3A), // Dark Slate Grey
+                                    Color(0xFF101010), // Deep Greyish Black
+                                  ]),
+                            ),
+                            child: ScreenWrapper(
+                                childG: currentState.currentScreen),
+                          ),
                         );
                       },
                     ),
                   ),
-
-                  /// Right side frosted containers
-                  phone
-                      ? Container()
-                      : Column(
-                          children: [
-                            Transform(
-                              transform: Matrix4.identity()
-                                ..setEntry(3, 2, 0.01)
-                                ..rotateY(0.06),
-                              alignment: Alignment.bottomCenter,
-                              child: FrostedWidget(
-                                height: 395 * theme.heightRatio,
-                                width: 247.5 * theme.widthRatio,
-                                childW: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Wrap(
-                                      children: [
-                                        ...List.generate(
-                                          colorPalette.length,
-                                          (index) => Consumer<CurrentState>(
-                                              builder: (context, _, __) {
-                                            return CustomButton(
-                                              margin: const EdgeInsets.all(10),
-                                              pressed:
-                                                  currentState.selectedColor ==
-                                                          index
-                                                      ? Pressed.pressed
-                                                      : Pressed.notPressed,
-                                              animate: true,
-                                              borderRadius: 100,
-                                              shadowColor: Colors.blueGrey[50],
-                                              isThreeD: true,
-                                              backgroundColor:
-                                                  colorPalette[index].color,
-                                              width: 50 * theme.widthRatio,
-                                              height: 50 * theme.widthRatio,
-                                              onPressed: () {
-                                                currentState
-                                                    .changeGradient(index);
-                                              },
-                                            );
-                                          }),
-                                        )
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Transform(
-                              transform: Matrix4.identity()
-                                ..setEntry(3, 2, 0.00999)
-                                ..rotateY(0.06),
-                              alignment: Alignment.topCenter,
-                              child: Container(
-                                margin:
-                                    const EdgeInsets.only(top: 0, bottom: 10),
-                                child: FrostedWidget(
-                                  childW: Center(
-                                    child: Container(
-                                      margin: const EdgeInsets.all(10),
-                                      padding:
-                                          EdgeInsets.all(10 * theme.widthRatio),
-                                      child: Center(
-                                          child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          AutoSizeText(
-                                            'The only way to do great work is to love what you do.',
-                                            style: GoogleFonts.inter(
-                                                // fontSize: 30,
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.w400),
-                                            maxFontSize: 25,
-                                            minFontSize: 10,
-                                            maxLines: 3,
-                                          ),
-                                          Align(
-                                              alignment: Alignment.bottomRight,
-                                              child: AutoSizeText(
-                                                '-Steve Jobs',
-                                                style: GoogleFonts.inter(
-                                                    // fontSize: 12,
-                                                    color: Colors.white
-                                                        .withOpacity(0.6),
-                                                    fontWeight:
-                                                        FontWeight.w400),
-                                                maxFontSize: 12,
-                                                minFontSize: 6,
-                                                maxLines: 1,
-                                              )),
-                                        ],
-                                      )),
-                                    ),
-                                  ).animate().fadeIn(
-                                      delay: 1.seconds, duration: .7.seconds),
-                                  height: 175.5 * theme.heightRatio,
-                                  width: 245 * theme.widthRatio,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                  SizedBox(height: 25 * theme.heightRatio),
+                  // Device selection buttons below phone
+                  _buildDeviceSelectionButtons(currentState),
                 ],
               ),
-              SizedBox(
-                height: 10 * theme.heightRatio,
-              ),
+            ),
+          ),
 
-              /// bottom button for device selection
-              Selector<CurrentState, DeviceInfo>(
-                  selector: (context, p1) => p1.currentDevice,
-                  builder: (context, _, __) {
-                    return Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        ...List.generate(devices.length, (index) {
-                          return CustomButton(
-                            pressed: currentState.currentDevice ==
-                                    devices[index].device
-                                ? Pressed.pressed
-                                : Pressed.notPressed,
-                            animate: true,
-                            borderRadius: 100,
-                            isThreeD: true,
-                            backgroundColor: Colors.black,
-                            width: 37.5,
-                            height: 37.5,
-                            onPressed: () {
-                              currentState.changeSelectedDevice(
-                                devices[index].device,
-                              );
-                            },
-                            child: Center(
-                              child: Icon(
-                                devices[index].icon,
+          // Right side - Containers starting from top
+          Expanded(
+            flex: 1,
+            child: Padding(
+              padding: EdgeInsets.only(
+                top: 50 * theme.heightRatio,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: theme.heightRatio * 20,
+                children: [
+                  // Name container
+                  FrostedWidget(
+                    childW: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.all(25 * theme.heightRatio),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            AutoSizeText(
+                              'Anas Nadeem',
+                              style: GoogleFonts.exo(
+                                fontSize: 36,
                                 color: Colors.white,
-                                size: 25,
+                                fontWeight: FontWeight.bold,
                               ),
+                              maxFontSize: 42,
+                              minFontSize: 24,
+                              maxLines: 1,
+                            ).animate().fadeIn(
+                                  delay: .8.seconds,
+                                  duration: .7.seconds,
+                                ),
+                            SizedBox(height: 12 * theme.heightRatio),
+                            AutoSizeText(
+                              'Flutter Developer + Backend developer',
+                              style: GoogleFonts.inter(
+                                fontSize: 16,
+                                color: Colors.white.withOpacity(0.9),
+                                fontWeight: FontWeight.w500,
+                              ),
+                              maxFontSize: 18,
+                              minFontSize: 14,
+                              maxLines: 1,
+                            ).animate().fadeIn(
+                                  delay: 1.seconds,
+                                  duration: .7.seconds,
+                                ),
+                            SizedBox(height: 15 * theme.heightRatio),
+                            AutoSizeText(
+                              '''I’m a Flutter developer and tech enthusiast pursuing B.Tech in IT. I’ve built full-stack apps like WizerAI, CardVault, and VerseVibe using Flutter, Node.js, Supabase, and Gemini API. I’ve interned at CRTD Technologies and love building sleek, high-performance apps. I’m also active on LeetCode and Codeforces (Pupil, max 1233), always sharpening my problem-solving skills.''',
+                              style: GoogleFonts.inter(
+                                fontSize: 14,
+                                color: Colors.white.withOpacity(0.8),
+                                fontWeight: FontWeight.w400,
+                                height: 1.4,
+                              ),
+                              maxFontSize: 16,
+                              minFontSize: 12,
+                            ).animate().fadeIn(
+                                  delay: 1.2.seconds,
+                                  duration: .7.seconds,
+                                ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    height: 295 * theme.heightRatio,
+                    width: 400 * theme.widthRatio,
+                  ),
+
+                  // Row with Connect and Theme containers
+
+                  // Connect with me container
+                  FrostedWidget(
+                    onPressed: () {
+                      currentState.launchInBrowser(linkedIn);
+                    },
+                    childW: Container(
+                      padding: EdgeInsets.all(20 * theme.heightRatio),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          AutoSizeText(
+                            "Connect with me",
+                            style: GoogleFonts.inter(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 16,
                             ),
-                          );
-                        })
-                      ],
-                    );
-                  })
-            ],
+                            maxFontSize: 18,
+                            minFontSize: 14,
+                          ),
+                          SizedBox(height: 15 * theme.heightRatio),
+                          // Social icons grid
+                          Wrap(
+                            spacing: 12,
+                            runSpacing: 12,
+                            children: [
+                              // GitHub
+                              GestureDetector(
+                                onTap: () {
+                                  currentState.launchInBrowser(github);
+                                },
+                                child: Container(
+                                    width: 40,
+                                    height: 40,
+                                    padding: const EdgeInsets.all(4),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white.withOpacity(0.2),
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: SvgPicture.asset(
+                                      'assets/logos/gh.svg',
+                                      height: 5,
+                                      width: 5,
+                                      color: Colors.white,
+                                    )),
+                              ),
+                              // LinkedIn
+                              GestureDetector(
+                                onTap: () {
+                                  currentState.launchInBrowser(linkedIn);
+                                },
+                                child: Container(
+                                    width: 40,
+                                    height: 40,
+                                    padding: const EdgeInsets.all(4),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white.withOpacity(0.2),
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: SvgPicture.asset(
+                                      'assets/logos/li.svg',
+                                      height: 5,
+                                      width: 5,
+                                      color: Colors.white,
+                                    )),
+                              ),
+                              // Twitter
+                              GestureDetector(
+                                onTap: () {
+                                  currentState.launchInBrowser(twitter);
+                                },
+                                child: Container(
+                                    width: 40,
+                                    height: 40,
+                                    padding: const EdgeInsets.all(4),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white.withOpacity(0.2),
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: SvgPicture.asset(
+                                      'assets/logos/twitter.svg',
+                                      height: 5,
+                                      width: 5,
+                                      color: Colors.white,
+                                    )),
+                              ),
+                              // Email
+                              GestureDetector(
+                                onTap: () {
+                                  currentState.launchInBrowser(emailLink);
+                                },
+                                child: Container(
+                                    width: 40,
+                                    height: 40,
+                                    padding: const EdgeInsets.all(4),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white.withOpacity(0.2),
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: SvgPicture.asset(
+                                      'assets/logos/email.svg',
+                                      height: 5,
+                                      width: 5,
+                                      color: Colors.white,
+                                    )),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ).animate().fadeIn(
+                            delay: 1.seconds,
+                            duration: .7.seconds,
+                          ),
+                    ),
+                    height: 120 * theme.heightRatio,
+                    width: 320 * theme.widthRatio,
+                  ),
+
+                  SizedBox(
+                    height: theme.heightRatio * 10,
+                  ),
+                  // Stats containers row
+                  Row(
+                    spacing: theme.widthRatio * 5,
+                    children: [
+                      FrostedWidget(
+                        childW: Container(
+                          padding: EdgeInsets.all(20 * theme.heightRatio),
+                          child: Column(
+                            children: [
+                              Container(
+                                width: 40,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                  color: Colors.white.withOpacity(0.2),
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: const Icon(
+                                  Icons.check_circle,
+                                  color: Colors.white,
+                                  size: 24,
+                                ),
+                              ),
+                              SizedBox(height: 6 * theme.heightRatio),
+                              AutoSizeText(
+                                '5+',
+                                style: GoogleFonts.exo(
+                                  fontSize: 32,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                maxFontSize: 36,
+                                minFontSize: 24,
+                              ),
+                              SizedBox(height: 2 * theme.heightRatio),
+                              AutoSizeText(
+                                'Apps\nbuilt',
+                                style: GoogleFonts.inter(
+                                  fontSize: 14,
+                                  color: Colors.white.withOpacity(0.8),
+                                  fontWeight: FontWeight.w500,
+                                ),
+                                textAlign: TextAlign.center,
+                                maxFontSize: 16,
+                                minFontSize: 12,
+                              ),
+                            ],
+                          ).animate().fadeIn(
+                                delay: 1.4.seconds,
+                                duration: .7.seconds,
+                              ),
+                        ),
+                        height: 150 * theme.heightRatio,
+                        width: 150 * theme.widthRatio,
+                      ),
+                      FrostedWidget(
+                        childW: Container(
+                          padding: EdgeInsets.all(20 * theme.heightRatio),
+                          child: Column(
+                            children: [
+                              Container(
+                                width: 40,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                  color: Colors.white.withOpacity(0.2),
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: const Icon(
+                                  Icons.dashboard,
+                                  color: Colors.white,
+                                  size: 24,
+                                ),
+                              ),
+                              SizedBox(height: 6 * theme.heightRatio),
+                              AutoSizeText(
+                                '10+',
+                                style: GoogleFonts.exo(
+                                  fontSize: 32,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                maxFontSize: 36,
+                                minFontSize: 24,
+                              ),
+                              SizedBox(height: 2 * theme.heightRatio),
+                              AutoSizeText(
+                                'Overall\nProjects',
+                                style: GoogleFonts.inter(
+                                  fontSize: 14,
+                                  color: Colors.white.withOpacity(0.8),
+                                  fontWeight: FontWeight.w500,
+                                ),
+                                textAlign: TextAlign.center,
+                                maxFontSize: 16,
+                                minFontSize: 12,
+                              ),
+                            ],
+                          ).animate().fadeIn(
+                                delay: 1.8.seconds,
+                                duration: .7.seconds,
+                              ),
+                        ),
+                        height: 150 * theme.heightRatio,
+                        width: 150 * theme.widthRatio,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildCenteredPhoneScreen(
+      Size size, CurrentState currentState, ThemeProvider theme) {
+    return Center(
+      child: SizedBox(
+        height: size.height - 200,
+        child: Consumer<CurrentState>(
+          builder: (context, _, __) {
+            return DeviceFrame(
+              device: currentState.currentDevice,
+              screen: Container(
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        Color(0xFF3A3A3A), // Dark Slate Grey
+                        Color(0xFF101010), // Deep Greyish Black
+                      ]),
+                ),
+                child: ScreenWrapper(childG: currentState.currentScreen),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+
+  Widget _buildDeviceSelectionButtons(CurrentState currentState) {
+    return Selector<CurrentState, DeviceInfo>(
+      selector: (context, p1) => p1.currentDevice,
+      builder: (context, _, __) {
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ...List.generate(devices.length, (index) {
+              return Container(
+                margin: const EdgeInsets.symmetric(horizontal: 8),
+                child: CustomButton(
+                  shadowColor: Colors.grey[800],
+                  pressed: currentState.currentDevice == devices[index].device
+                      ? Pressed.pressed
+                      : Pressed.notPressed,
+                  animate: true,
+                  borderRadius: 100,
+                  isThreeD: true,
+                  backgroundColor: Colors.black,
+                  width: 45,
+                  height: 45,
+                  onPressed: () {
+                    currentState.changeSelectedDevice(devices[index].device);
+                  },
+                  child: Center(
+                    child: Icon(
+                      devices[index].icon,
+                      color: Colors.white,
+                      size: 25,
+                    ),
+                  ),
+                ),
+              );
+            })
+          ],
+        );
+      },
     );
   }
 }

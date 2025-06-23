@@ -75,6 +75,7 @@ flutter:
     - assets/rive/
     - assets/icons/linkedin.png
     - assets/icons/github.png
+    - assets/logos/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

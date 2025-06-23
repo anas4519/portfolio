@@ -260,11 +260,13 @@ final List<JobExperience> jobExperiences = [
 // const String youtubeChannel = "https://www.youtube.com/@highcoder";
 const String linkedIn = "https://www.linkedin.com/in/anas-nadeem-8888bb223/";
 const String github = "https://github.com/anas4519";
+const String twitter = "https://x.com/AnasNad50405828";
 // const String twitter = "https://twitter.com/highcoder__";
 // const String topMate = "https://topmate.io/highcoder";
 const String resumeLink =
     "https://drive.google.com/drive/folders/11M7tvOZhP3f5pK-c4gvlMf-ORHpHryB7";
 const String email = "nadeemanas617@gmail.com";
+const String emailLink = "mailto:nadeemanas617@gmail.com";
 String introduction =
     "Welcome to my portfolio website, this website is highly inspired High Coder and Pawan Kumar.\n\n I am a 3rd year B.Tech student in Information Technology, seeking a software development internship to leverage skills in Java, Flutter and Dart.\nEnthusiastic and fast learner, eager to apply academic knowledge and problem-solving abilities to contribute to innovative projects. With a strong programming foundation, proactive attitude, and openness to learning new technologies, I aim to support and drive efficiency within the development team.\n\nYou can check out my projects using the other apps on the Home Screen";
 
