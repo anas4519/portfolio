@@ -76,6 +76,7 @@ flutter:
     - assets/icons/linkedin.png
     - assets/icons/github.png
     - assets/logos/
+    - assets/screenshots/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

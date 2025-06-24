@@ -1,10 +1,10 @@
 import 'package:awesome_portfolio/models/app_model.dart';
 import 'package:awesome_portfolio/models/color_model.dart';
 import 'package:awesome_portfolio/models/device_model.dart';
-import 'package:awesome_portfolio/screen/miniProjects/cardvault.dart';
+import 'package:awesome_portfolio/screen/miniProjects/project_display/cardvault.dart';
 import 'package:awesome_portfolio/screen/miniProjects/education/education.dart';
 import 'package:awesome_portfolio/screen/miniProjects/experience/experience.dart';
-import 'package:awesome_portfolio/screen/miniProjects/versevibe.dart';
+import 'package:awesome_portfolio/screen/miniProjects/project_display/versevibe.dart';
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
