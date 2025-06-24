@@ -796,6 +796,19 @@ class _CardvaultState extends State<Cardvault> {
     },
   ];
 
+  final List<String> points = [
+    'Cross-platform app built with Flutter for Android and iOS',
+    'Scan and digitize business cards with ease',
+    'Backend powered by Node.js for fast, scalable performance',
+    'Secure user authentication and real-time data processing',
+    'Business card data stored efficiently in MongoDB',
+    'Images uploaded and stored securely on Cloudinary',
+    'Categorize and retrieve contacts by name, industry, or custom fields',
+    'Intuitive search and filter functions for quick access',
+    'Export contacts as PDFs for easy sharing',
+    'Customizable themes with light and dark modes',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return ProjectBuilder(
@@ -808,6 +821,7 @@ class _CardvaultState extends State<Cardvault> {
       details: details,
       techStack: techStack,
       features: features,
+      points: points,
     );
   }
 }

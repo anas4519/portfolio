@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../consts/data.dart';
 
@@ -79,6 +80,7 @@ class _AboutMeState extends State<AboutMe> {
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
+                        textAlign: TextAlign.center,
                       ),
                     )
                         .animate()
@@ -249,7 +251,14 @@ class _AboutMeState extends State<AboutMe> {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            final url = label == "GitHub"
+                ? github
+                : label == "Email"
+                    ? emailLink
+                    : linkedIn;
+            launchUrl(Uri.parse(url));
+          },
           borderRadius: BorderRadius.circular(15),
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),

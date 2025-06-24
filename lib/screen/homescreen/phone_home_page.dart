@@ -49,10 +49,6 @@ class PhoneHomeScreen extends StatelessWidget {
                             },
                             width: 45,
                             height: 45,
-                            asset: apps[index].assetPath != null
-                                ? ButtonAsset(apps[index].assetPath!,
-                                    width: 25, height: 25)
-                                : null,
                             backgroundColor: apps[index].color,
                             child: apps[index].assetPath == null
                                 ? Center(
@@ -62,7 +58,16 @@ class PhoneHomeScreen extends StatelessWidget {
                                       color: Colors.black,
                                     ),
                                   )
-                                : null,
+                                : Center(
+                                    child: SizedBox(
+                                      width: 39, // Reduced from 40
+                                      height: 39, // Reduced from 40
+                                      child: Image.asset(
+                                        apps[index].assetPath!,
+                                        fit: BoxFit.contain,
+                                      ),
+                                    ),
+                                  ),
                           ),
                           SizedBox(
                             width: 60,

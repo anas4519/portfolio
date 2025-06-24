@@ -38,13 +38,12 @@ class HomePage extends StatelessWidget {
             builder: (context, _, __) {
               return Container(
                 decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                      colors: [
-                        Color(0xFF1A1A1A), // Very Dark Grey
-                        Color(0xFF000000), // Absolute Black
-                      ]),
+                  color: Color(0xFF000000),
+                  image: DecorationImage(
+                    image: AssetImage('images/batman7.jpg'),
+                    fit: BoxFit.cover,
+                    opacity: 0.2,
+                  ),
                 ),
               );
             },
@@ -91,12 +90,15 @@ class HomePage extends StatelessWidget {
                           screen: Container(
                             decoration: const BoxDecoration(
                               gradient: LinearGradient(
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
-                                  colors: [
-                                    Color(0xFF3A3A3A), // Dark Slate Grey
-                                    Color(0xFF101010), // Deep Greyish Black
-                                  ]),
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                                  Color(0xFF1a1a1a), // Dark gray
+                                  Color(0xFF0f0f0f), // Darker gray
+                                  Color(0xFF060606), // Near black
+                                ],
+                                stops: [0.0, 0.6, 1.0],
+                              ),
                             ),
                             child: ScreenWrapper(
                                 childG: currentState.currentScreen),
@@ -131,14 +133,16 @@ class HomePage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(25 * theme.heightRatio),
+                        padding: EdgeInsets.symmetric(
+                            vertical: 75 * theme.heightRatio,
+                            horizontal: 50 * theme.widthRatio),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             AutoSizeText(
                               'Anas Nadeem',
                               style: GoogleFonts.exo(
-                                fontSize: 36,
+                                fontSize: 48,
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -149,21 +153,30 @@ class HomePage extends StatelessWidget {
                                   delay: .8.seconds,
                                   duration: .7.seconds,
                                 ),
-                            SizedBox(height: 12 * theme.heightRatio),
-                            AutoSizeText(
-                              'Flutter Developer + Backend developer',
-                              style: GoogleFonts.inter(
-                                fontSize: 16,
-                                color: Colors.white.withOpacity(0.9),
-                                fontWeight: FontWeight.w500,
-                              ),
-                              maxFontSize: 18,
-                              minFontSize: 14,
-                              maxLines: 1,
-                            ).animate().fadeIn(
-                                  delay: 1.seconds,
-                                  duration: .7.seconds,
+                            SizedBox(height: 24 * theme.heightRatio),
+                            FrostedWidget(
+                              height: theme.heightRatio * 30,
+                              width: theme.widthRatio * 250,
+                              childW: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Center(
+                                  child: AutoSizeText(
+                                    'Flutter Developer + Backend developer',
+                                    style: GoogleFonts.inter(
+                                      fontSize: 16,
+                                      color: Colors.white.withOpacity(0.9),
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                    maxFontSize: 18,
+                                    minFontSize: 14,
+                                    maxLines: 1,
+                                  ).animate().fadeIn(
+                                        delay: 1.seconds,
+                                        duration: .7.seconds,
+                                      ),
                                 ),
+                              ),
+                            ),
                             SizedBox(height: 15 * theme.heightRatio),
                             AutoSizeText(
                               '''I’m a Flutter developer and tech enthusiast pursuing B.Tech in IT. I’ve built full-stack apps like WizerAI, CardVault, and VerseVibe using Flutter, Node.js, Supabase, and Gemini API. I’ve interned at CRTD Technologies and love building sleek, high-performance apps. I’m also active on LeetCode and Codeforces (Pupil, max 1233), always sharpening my problem-solving skills.''',
@@ -183,8 +196,8 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    height: 295 * theme.heightRatio,
-                    width: 400 * theme.widthRatio,
+                    height: 350 * theme.heightRatio,
+                    width: 550 * theme.widthRatio,
                   ),
 
                   // Row with Connect and Theme containers
@@ -312,7 +325,7 @@ class HomePage extends StatelessWidget {
                   ),
                   // Stats containers row
                   Row(
-                    spacing: theme.widthRatio * 5,
+                    spacing: theme.widthRatio * 10,
                     children: [
                       FrostedWidget(
                         childW: Container(
@@ -414,6 +427,56 @@ class HomePage extends StatelessWidget {
                         height: 150 * theme.heightRatio,
                         width: 150 * theme.widthRatio,
                       ),
+                      FrostedWidget(
+                        childW: Container(
+                          padding: EdgeInsets.all(20 * theme.heightRatio),
+                          child: Column(
+                            children: [
+                              Container(
+                                width: 40,
+                                height: 40,
+                                decoration: BoxDecoration(
+                                  color: Colors.white.withOpacity(0.2),
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: const Icon(
+                                  Icons.calculate_rounded,
+                                  color: Colors.white,
+                                  size: 24,
+                                ),
+                              ),
+                              SizedBox(height: 6 * theme.heightRatio),
+                              AutoSizeText(
+                                '1000+',
+                                style: GoogleFonts.exo(
+                                  fontSize: 32,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                maxFontSize: 36,
+                                minFontSize: 24,
+                              ),
+                              SizedBox(height: 2 * theme.heightRatio),
+                              AutoSizeText(
+                                'Problems\nSolved',
+                                style: GoogleFonts.inter(
+                                  fontSize: 14,
+                                  color: Colors.white.withOpacity(0.8),
+                                  fontWeight: FontWeight.w500,
+                                ),
+                                textAlign: TextAlign.center,
+                                maxFontSize: 16,
+                                minFontSize: 12,
+                              ),
+                            ],
+                          ).animate().fadeIn(
+                                delay: 1.8.seconds,
+                                duration: .7.seconds,
+                              ),
+                        ),
+                        height: 150 * theme.heightRatio,
+                        width: 150 * theme.widthRatio,
+                      ),
                     ],
                   ),
                 ],
@@ -437,12 +500,15 @@ class HomePage extends StatelessWidget {
               screen: Container(
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                        Color(0xFF3A3A3A), // Dark Slate Grey
-                        Color(0xFF101010), // Deep Greyish Black
-                      ]),
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Color(0xFF1a1a1a), // Dark gray
+                      Color(0xFF0f0f0f), // Darker gray
+                      Color(0xFF060606), // Near black
+                    ],
+                    stops: [0.0, 0.6, 1.0],
+                  ),
                 ),
                 child: ScreenWrapper(childG: currentState.currentScreen),
               ),

@@ -97,6 +97,19 @@ VerseVibe is not just a blogging app but a comprehensive tool that leverages mod
     },
   ];
 
+  final List<String> points = [
+    'Modern, AI-powered blogging platform with a clean interface',
+    'Fast and secure user authentication using Node.js and JWT tokens',
+    'Efficient REST API for seamless backend communication',
+    'Image uploads handled via Multer for enhanced posts',
+    'Scalable data storage and fast retrieval with MongoDB',
+    'AI Assistant powered by Gemini API for content suggestions and grammar checks',
+    'AI-generated blog summaries for concise content overviews',
+    'Text-to-Speech (TTS) technology for listening to blog content',
+    'Optimized performance with 30% faster data retrieval',
+    'Comprehensive tool combining sleek UI and advanced AI features',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return ProjectBuilder(
@@ -109,6 +122,7 @@ VerseVibe is not just a blogging app but a comprehensive tool that leverages mod
       details: details,
       techStack: techStack,
       features: features,
+      points: points,
     );
   }
 }

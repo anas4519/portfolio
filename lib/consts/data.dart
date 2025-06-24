@@ -1,10 +1,12 @@
 import 'package:awesome_portfolio/models/app_model.dart';
 import 'package:awesome_portfolio/models/color_model.dart';
 import 'package:awesome_portfolio/models/device_model.dart';
+import 'package:awesome_portfolio/screen/miniProjects/achievements/achievements.dart';
 import 'package:awesome_portfolio/screen/miniProjects/project_display/cardvault.dart';
 import 'package:awesome_portfolio/screen/miniProjects/education/education.dart';
 import 'package:awesome_portfolio/screen/miniProjects/experience/experience.dart';
 import 'package:awesome_portfolio/screen/miniProjects/project_display/versevibe.dart';
+import 'package:awesome_portfolio/screen/miniProjects/project_display/wizerai.dart';
 import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -19,7 +21,7 @@ const double baseWidth = 1440;
 
 List<DeviceModel> devices = [
   DeviceModel(
-    device: Devices.android.onePlus8Pro,
+    device: Devices.android.samsungGalaxyNote20Ultra,
     icon: Icons.android,
   ),
   DeviceModel(
@@ -150,7 +152,7 @@ List<AppModel> apps = [
   AppModel(
       title: 'Leetcode',
       color: Colors.black,
-      link: 'https://leetcode.com/u/anas45/',
+      link: lc,
       assetPath: "assets/icons/leetcode.png"),
   AppModel(
       title: "CardVault",
@@ -159,9 +161,24 @@ List<AppModel> apps = [
       screen: const Cardvault()),
   AppModel(
       title: "VerseVibe",
-      assetPath: "assets/icons/vv_zoomed.png",
-      color: const Color(0xFF050522),
+      assetPath: "assets/icons/versevibe.png",
+      color: const Color.fromARGB(255, 16, 20, 30),
       screen: const VerseVibe()),
+  AppModel(
+      title: "WizerAI",
+      color: const Color.fromARGB(255, 24, 19, 27),
+      assetPath: "assets/icons/wizerai.png",
+      screen: const WizerAI()),
+  AppModel(
+      title: "Achievements",
+      color: Colors.white,
+      icon: Icons.emoji_events,
+      screen: const Achievements()),
+  AppModel(
+      title: "Codeforces",
+      color: Colors.white,
+      assetPath: "assets/icons/cf.png",
+      link: cf)
 ];
 
 final List<JobExperience> education = [
@@ -257,12 +274,11 @@ final List<JobExperience> jobExperiences = [
   // ),
 ];
 
-// const String youtubeChannel = "https://www.youtube.com/@highcoder";
 const String linkedIn = "https://www.linkedin.com/in/anas-nadeem-8888bb223/";
 const String github = "https://github.com/anas4519";
 const String twitter = "https://x.com/AnasNad50405828";
-// const String twitter = "https://twitter.com/highcoder__";
-// const String topMate = "https://topmate.io/highcoder";
+const String cf = "https://codeforces.com/profile/Anas45";
+const String lc = 'https://leetcode.com/u/anas45/';
 const String resumeLink =
     "https://drive.google.com/drive/folders/11M7tvOZhP3f5pK-c4gvlMf-ORHpHryB7";
 const String email = "nadeemanas617@gmail.com";

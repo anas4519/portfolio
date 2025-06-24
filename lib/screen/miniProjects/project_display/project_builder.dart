@@ -13,6 +13,7 @@ class ProjectBuilder extends StatefulWidget {
   final String details;
   final List<Map<String, dynamic>> techStack;
   final List<Map<String, dynamic>> features;
+  final List<String> points;
 
   const ProjectBuilder({
     super.key,
@@ -25,6 +26,7 @@ class ProjectBuilder extends StatefulWidget {
     required this.details,
     required this.techStack,
     required this.features,
+    required this.points,
   });
 
   @override
@@ -218,19 +220,67 @@ class _ProjectBuilderState extends State<ProjectBuilder> {
                       ],
                     ),
                     const SizedBox(height: 20),
-                    SelectableText(
-                      widget.details,
-                      style: GoogleFonts.openSans(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.grey.shade300,
-                        height: 1.6,
-                      ),
-                    ),
+                    // Bullet Points
+                    ...widget.points.asMap().entries.map((entry) {
+                      final index = entry.key;
+                      final point = entry.value;
+
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 15),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            // Bullet icon
+                            Container(
+                              margin: const EdgeInsets.only(top: 6),
+                              child: Container(
+                                width: 6,
+                                height: 6,
+                                decoration: BoxDecoration(
+                                  gradient: LinearGradient(
+                                    colors: [
+                                      Colors.purple.shade400,
+                                      Colors.blue.shade400,
+                                    ],
+                                  ),
+                                  shape: BoxShape.circle,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.purple.withOpacity(0.4),
+                                      blurRadius: 8,
+                                      spreadRadius: 2,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 15),
+                            // Point text
+                            Expanded(
+                              child: SelectableText(
+                                point,
+                                style: GoogleFonts.openSans(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.grey.shade300,
+                                  height: 1.6,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                          .animate()
+                          .slideX(
+                            begin: 0.1,
+                            duration: const Duration(milliseconds: 400),
+                            delay: Duration(milliseconds: 100 + (index * 50)),
+                          )
+                          .fadeIn();
+                    }).toList(),
                   ],
                 ),
               ).animate().fadeIn(duration: const Duration(milliseconds: 600)),
-
               const SizedBox(height: 30),
 
               // Features Section
@@ -464,8 +514,32 @@ class _ProjectBuilderState extends State<ProjectBuilder> {
                 itemCount: features.length,
                 itemBuilder: (context, index) {
                   final feature = features[index];
+
+                  // Responsive sizing
+                  double iconSize;
+                  double titleFontSize;
+                  double descFontSize;
+                  EdgeInsetsGeometry padding;
+
+                  if (width < 400) {
+                    iconSize = 20;
+                    titleFontSize = 11;
+                    descFontSize = 9;
+                    padding = const EdgeInsets.all(10);
+                  } else if (width < 600) {
+                    iconSize = 22;
+                    titleFontSize = 12;
+                    descFontSize = 10;
+                    padding = const EdgeInsets.all(13);
+                  } else {
+                    iconSize = 24;
+                    titleFontSize = 13;
+                    descFontSize = 11;
+                    padding = const EdgeInsets.all(15);
+                  }
+
                   return Container(
-                    padding: const EdgeInsets.all(15),
+                    padding: padding,
                     decoration: BoxDecoration(
                       color: Colors.white.withOpacity(0.05),
                       borderRadius: BorderRadius.circular(15),
@@ -479,13 +553,13 @@ class _ProjectBuilderState extends State<ProjectBuilder> {
                         Icon(
                           feature['icon'] as IconData,
                           color: Colors.purple.shade300,
-                          size: 24,
+                          size: iconSize,
                         ),
                         const SizedBox(height: 8),
                         Text(
                           feature['title'] as String,
                           style: GoogleFonts.poppins(
-                            fontSize: 12,
+                            fontSize: titleFontSize,
                             fontWeight: FontWeight.w600,
                             color: Colors.white,
                           ),
@@ -495,7 +569,7 @@ class _ProjectBuilderState extends State<ProjectBuilder> {
                         Text(
                           feature['desc'] as String,
                           style: GoogleFonts.poppins(
-                            fontSize: 10,
+                            fontSize: descFontSize,
                             color: Colors.grey.shade400,
                           ),
                           textAlign: TextAlign.center,

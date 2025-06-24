@@ -53,8 +53,8 @@ class FrostedWidget extends StatelessWidget {
                         ],
                         gradient: LinearGradient(
                           colors: [
-                            Colors.white.withOpacity(0.5),
-                            Colors.white.withOpacity(0.2)
+                            Colors.white.withOpacity(0.2),
+                            Colors.white.withOpacity(0.05)
                           ],
                           stops: const [0.0, 1.0],
                         ),
