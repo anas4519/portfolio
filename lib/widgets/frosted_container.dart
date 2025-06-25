@@ -1,19 +1,20 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class FrostedWidget extends StatelessWidget {
   final void Function()? onPressed;
-
   final Widget childW;
-  final double height;
-  final double width;
+  final double? height;
+  final double? width;
+  final EdgeInsetsGeometry? padding;
+
   const FrostedWidget({
     super.key,
-    this.height = 150,
-    this.width = 200,
+    this.height,
+    this.width,
     required this.childW,
     this.onPressed,
+    this.padding,
   });
 
   @override
@@ -22,46 +23,36 @@ class FrostedWidget extends StatelessWidget {
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
       child: Material(
         type: MaterialType.transparency,
-        child: GestureDetector(
+        child: InkWell(
           onTap: onPressed,
+          borderRadius: BorderRadius.circular(20),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+            child: BackdropFilter(
+              filter: ImageFilter.blur(
+                sigmaX: 7,
+                sigmaY: 7,
               ),
-              child: Stack(
-                children: [
-                  BackdropFilter(
-                    filter: ImageFilter.blur(
-                      sigmaX: 7,
-                      sigmaY: 7,
-                    ),
-                    child: SizedBox(
-                      height: height,
-                      width: width,
-                    ),
+              child: Container(
+                height: height,
+                width: width,
+                padding: padding,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.25),
+                    )
+                  ],
+                  gradient: LinearGradient(
+                    colors: [
+                      Colors.white.withOpacity(0.2),
+                      Colors.white.withOpacity(0.05)
+                    ],
+                    stops: const [0.0, 1.0],
                   ),
-                  Container(
-                    height: height,
-                    width: width,
-                    decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.25),
-                          )
-                        ],
-                        gradient: LinearGradient(
-                          colors: [
-                            Colors.white.withOpacity(0.2),
-                            Colors.white.withOpacity(0.05)
-                          ],
-                          stops: const [0.0, 1.0],
-                        ),
-                        borderRadius: BorderRadius.circular(20)),
-                    child: childW,
-                  ),
-                ],
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: childW,
               ),
             ),
           ),

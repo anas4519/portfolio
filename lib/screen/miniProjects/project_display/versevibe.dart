@@ -10,10 +10,10 @@ class VerseVibe extends StatefulWidget {
 
 class _VerseVibeState extends State<VerseVibe> {
   final List<String> screenshots = [
-    'screenshots/vv/ss1.png',
-    'screenshots/vv/ss2.png',
-    'screenshots/vv/ss3.png',
-    'screenshots/vv/ss4.png',
+    'assets/screenshots/vv/ss1.png',
+    'assets/screenshots/vv/ss2.png',
+    'assets/screenshots/vv/ss3.png',
+    'assets/screenshots/vv/ss4.png',
   ];
 
   final String bgImage = 'assets/icons/versevibe.png';

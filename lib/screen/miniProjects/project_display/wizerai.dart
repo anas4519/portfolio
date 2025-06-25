@@ -10,13 +10,13 @@ class WizerAI extends StatefulWidget {
 
 class _WizerAIState extends State<WizerAI> {
   final List<String> screenshots = [
-    'screenshots/wai/page1.png',
-    'screenshots/wai/page2.png',
-    'screenshots/wai/page3.png',
-    'screenshots/wai/page4.png',
-    'screenshots/wai/page5.png',
-    'screenshots/wai/page6.png',
-    'screenshots/wai/page7.png',
+    'assets/screenshots/wai/page1.png',
+    'assets/screenshots/wai/page2.png',
+    'assets/screenshots/wai/page3.png',
+    'assets/screenshots/wai/page4.png',
+    'assets/screenshots/wai/page5.png',
+    'assets/screenshots/wai/page6.png',
+    'assets/screenshots/wai/page7.png',
   ];
 
   final String bgImage = 'assets/icons/wizerai.png';

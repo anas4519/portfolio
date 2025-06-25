@@ -733,12 +733,12 @@ class Cardvault extends StatefulWidget {
 
 class _CardvaultState extends State<Cardvault> {
   final List<String> screenshots = [
-    'screenshots/cv/ss1.jpg',
-    'screenshots/cv/ss2.jpg',
-    'screenshots/cv/ss3.jpg',
-    'screenshots/cv/ss4.jpg',
-    'screenshots/cv/ss5.jpg',
-    'screenshots/cv/ss6.jpg'
+    'assets/screenshots/cv/ss1.jpg',
+    'assets/screenshots/cv/ss2.jpg',
+    'assets/screenshots/cv/ss3.jpg',
+    'assets/screenshots/cv/ss4.jpg',
+    'assets/screenshots/cv/ss5.jpg',
+    'assets/screenshots/cv/ss6.jpg'
   ];
 
   final String bgImage = 'assets/icons/cv_launcher_icon.png';
