@@ -75,6 +75,9 @@ flutter:
     - assets/rive/
     - assets/logos/
     - assets/screenshots/
+    - assets/screenshots/cv/
+    - assets/screenshots/vv/
+    - assets/screenshots/wai/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
