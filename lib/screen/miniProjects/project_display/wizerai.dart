@@ -19,7 +19,7 @@ class _WizerAIState extends State<WizerAI> {
     'screenshots/wai/page7.png',
   ];
 
-  final String bgImage = 'assets/icons/WizerAI.png';
+  final String bgImage = 'assets/icons/wizerai.png';
 
   final String name = 'WizerAI';
 

@@ -16,7 +16,8 @@ class _VerseVibeState extends State<VerseVibe> {
     'screenshots/vv/ss4.png',
   ];
 
-  final String bgImage = 'assets/icons/VerseVibe.png';
+  final String bgImage = 'assets/icons/versevibe.png';
+  // 'assets/icons/cv_launcher_icon.png'
 
   final String name = 'VerseVibe';
 

@@ -73,8 +73,6 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/rive/
-    - assets/icons/linkedin.png
-    - assets/icons/github.png
     - assets/logos/
     - assets/screenshots/
 
