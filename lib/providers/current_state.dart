@@ -1,5 +1,6 @@
 import 'package:awesome_portfolio/consts/data.dart';
 import 'package:device_frame/device_frame.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -36,7 +37,9 @@ class CurrentState extends ChangeNotifier {
     if (await canLaunchUrl(url)) {
       await launchUrl(url, mode: LaunchMode.externalApplication);
     } else {
-      print('Could not launch $url');
+      if (kDebugMode) {
+        print('Could not launch $url');
+      }
     }
   }
 

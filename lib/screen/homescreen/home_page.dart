@@ -14,7 +14,7 @@ import '../../widgets/frosted_container.dart';
 import 'phone_screen_wrapper.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -171,7 +171,8 @@ class HomePage extends StatelessWidget {
                                     'Flutter Developer + Backend developer',
                                     style: GoogleFonts.inter(
                                       fontSize: 16,
-                                      color: Colors.white.withOpacity(0.9),
+                                      color:
+                                          Colors.white.withValues(alpha: 0.9),
                                       fontWeight: FontWeight.w500,
                                     ),
                                     maxFontSize: 18,

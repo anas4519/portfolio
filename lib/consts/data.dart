@@ -203,6 +203,20 @@ final List<JobExperience> education = [
 
 final List<JobExperience> jobExperiences = [
   JobExperience(
+    color: Colors.pink,
+    location: "Remote",
+    title: 'Flutter Developer Intern',
+    company: 'Verbose Techlabs LLP',
+    startDate: 'July 2024',
+    endDate: 'Present',
+    bulletPoints: [
+      "Led development efforts on 10+ production Flutter applications spanning video streaming, mobile gaming, social networking, and e-commerce platforms",
+      "Implemented complex native features including real-time push notifications and iOS Live Activities using Flutter platform channels and native SDKs",
+      "Enhanced app performance by optimizing state management with BLoC/Cubit patterns and improving UI responsiveness across different screen sizes",
+      "Reduced bug resolution time by 40% through systematic debugging and maintained 95% on-time sprint delivery in an agile environment",
+    ],
+  ),
+  JobExperience(
     color: Colors.blue,
     location: "Remote",
     title: 'Flutter Developer Intern',
@@ -214,7 +228,6 @@ final List<JobExperience> jobExperiences = [
       "Built the Front-end of the application from scratch and optimized it for responsiveness and performance.",
       "Utilized Riverpod for state management and integrated various APIs to display data, ensuring real-time updates and seamless interaction, which improved app reliability by 20%.",
       "Used several other packages to enhance the user experience, incorporating features like animations, custom widgets, and efficient data handling.",
-      "Managed and integrated code from other interns, implementing best practices for version control and bug-fixes.",
     ],
   ),
   // Add more job experiences here...
