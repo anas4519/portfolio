@@ -25,13 +25,13 @@ class Skills extends StatelessWidget {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: [
-                      Colors.purple.shade900.withOpacity(0.3),
-                      Colors.blue.shade900.withOpacity(0.3),
+                      Colors.purple.shade900.withValues(alpha: 0.3),
+                      Colors.blue.shade900.withValues(alpha: 0.3),
                     ],
                   ),
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
-                    color: Colors.white.withOpacity(0.1),
+                    color: Colors.white.withValues(alpha: 0.1),
                     width: 1,
                   ),
                 ),
@@ -40,7 +40,7 @@ class Skills extends StatelessWidget {
                     Icon(
                       Icons.code_rounded,
                       size: 50,
-                      color: Colors.white.withOpacity(0.9),
+                      color: Colors.white.withValues(alpha: 0.9),
                     )
                         .animate()
                         .scale(duration: const Duration(milliseconds: 600))
@@ -106,10 +106,10 @@ class Skills extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.05),
+        color: Colors.white.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: Colors.white.withOpacity(0.1),
+          color: Colors.white.withValues(alpha: 0.1),
           width: 1,
         ),
       ),
@@ -122,12 +122,12 @@ class Skills extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.1),
+                  color: Colors.white.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Icon(
                   icon,
-                  color: Colors.white.withOpacity(0.8),
+                  color: Colors.white.withValues(alpha: 0.8),
                   size: 24,
                 ),
               ),
@@ -169,13 +169,13 @@ class Skills extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            skill.colorS.withOpacity(0.2),
-            skill.colorS.withOpacity(0.1),
+            skill.colorS.withValues(alpha: 0.2),
+            skill.colorS.withValues(alpha: 0.1),
           ],
         ),
         borderRadius: BorderRadius.circular(30),
         border: Border.all(
-          color: skill.colorS.withOpacity(0.5),
+          color: skill.colorS.withValues(alpha: 0.5),
           width: 1.5,
         ),
       ),
@@ -194,7 +194,7 @@ class Skills extends StatelessWidget {
                   style: GoogleFonts.poppins(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
-                    color: Colors.white.withOpacity(0.9),
+                    color: Colors.white.withValues(alpha: 0.9),
                   ),
                 ),
               ],

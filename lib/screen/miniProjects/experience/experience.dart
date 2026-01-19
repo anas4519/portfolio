@@ -26,13 +26,13 @@ class Experience extends StatelessWidget {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: [
-                      Colors.purple.shade900.withOpacity(0.3),
-                      Colors.blue.shade900.withOpacity(0.3),
+                      Colors.purple.shade900.withValues(alpha: 0.3),
+                      Colors.blue.shade900.withValues(alpha: 0.3),
                     ],
                   ),
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
-                    color: Colors.white.withOpacity(0.1),
+                    color: Colors.white.withValues(alpha: 0.1),
                     width: 1,
                   ),
                 ),
@@ -41,13 +41,13 @@ class Experience extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(15),
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.1),
+                        color: Colors.white.withValues(alpha: 0.1),
                         shape: BoxShape.circle,
                       ),
                       child: Icon(
                         Icons.work_history_rounded,
                         size: 50,
-                        color: Colors.white.withOpacity(0.9),
+                        color: Colors.white.withValues(alpha: 0.9),
                       ),
                     )
                         .animate()
@@ -115,10 +115,10 @@ class Experience extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 20),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.05),
+          color: Colors.white.withValues(alpha: 0.05),
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-            color: experience.color.withOpacity(0.3),
+            color: experience.color.withValues(alpha: 0.3),
             width: 1,
           ),
         ),
@@ -126,8 +126,8 @@ class Experience extends StatelessWidget {
           data: Theme.of(context).copyWith(
             dividerColor: Colors.transparent,
             expansionTileTheme: ExpansionTileThemeData(
-              iconColor: Colors.white.withOpacity(0.7),
-              collapsedIconColor: Colors.white.withOpacity(0.7),
+              iconColor: Colors.white.withValues(alpha: 0.7),
+              collapsedIconColor: Colors.white.withValues(alpha: 0.7),
             ),
           ),
           child: ExpansionTile(
@@ -161,10 +161,10 @@ class Experience extends StatelessWidget {
                     vertical: 6,
                   ),
                   decoration: BoxDecoration(
-                    color: experience.color.withOpacity(0.2),
+                    color: experience.color.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(
-                      color: experience.color.withOpacity(0.4),
+                      color: experience.color.withValues(alpha: 0.4),
                       width: 1,
                     ),
                   ),
@@ -173,7 +173,7 @@ class Experience extends StatelessWidget {
                     style: GoogleFonts.poppins(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
-                      color: Colors.white.withOpacity(0.9),
+                      color: Colors.white.withValues(alpha: 0.9),
                     ),
                   ),
                 ),
@@ -216,7 +216,7 @@ class Experience extends StatelessWidget {
             children: [
               Container(
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.03),
+                  color: Colors.white.withValues(alpha: 0.03),
                   borderRadius: BorderRadius.circular(15),
                 ),
                 padding: const EdgeInsets.all(15),
@@ -228,7 +228,7 @@ class Experience extends StatelessWidget {
                       style: GoogleFonts.poppins(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
-                        color: Colors.white.withOpacity(0.8),
+                        color: Colors.white.withValues(alpha: 0.8),
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -243,11 +243,12 @@ class Experience extends StatelessWidget {
                               height: 6,
                               margin: const EdgeInsets.only(top: 8),
                               decoration: BoxDecoration(
-                                color: experience.color.withOpacity(0.8),
+                                color: experience.color.withValues(alpha: 0.8),
                                 shape: BoxShape.circle,
                                 boxShadow: [
                                   BoxShadow(
-                                    color: experience.color.withOpacity(0.4),
+                                    color:
+                                        experience.color.withValues(alpha: 0.4),
                                     blurRadius: 8,
                                     spreadRadius: 2,
                                   ),
@@ -268,7 +269,7 @@ class Experience extends StatelessWidget {
                           ],
                         ),
                       );
-                    }).toList(),
+                    }),
                   ],
                 ),
               ),

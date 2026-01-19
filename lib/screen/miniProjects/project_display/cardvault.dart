@@ -41,13 +41,13 @@
 //                     begin: Alignment.topLeft,
 //                     end: Alignment.bottomRight,
 //                     colors: [
-//                       Colors.purple.shade900.withOpacity(0.3),
-//                       Colors.blue.shade900.withOpacity(0.3),
+//                       Colors.purple.shade900.withValues(alpha:0.3),
+//                       Colors.blue.shade900.withValues(alpha:0.3),
 //                     ],
 //                   ),
 //                   borderRadius: BorderRadius.circular(20),
 //                   border: Border.all(
-//                     color: Colors.white.withOpacity(0.1),
+//                     color: Colors.white.withValues(alpha:0.1),
 //                     width: 1,
 //                   ),
 //                 ),
@@ -58,7 +58,7 @@
 //                         shape: BoxShape.circle,
 //                         boxShadow: [
 //                           BoxShadow(
-//                             color: Colors.purple.withOpacity(0.5),
+//                             color: Colors.purple.withValues(alpha:0.5),
 //                             blurRadius: 30,
 //                             spreadRadius: 10,
 //                           ),
@@ -168,10 +168,10 @@
 //               Container(
 //                 width: double.infinity,
 //                 decoration: BoxDecoration(
-//                   color: Colors.white.withOpacity(0.05),
+//                   color: Colors.white.withValues(alpha:0.05),
 //                   borderRadius: BorderRadius.circular(20),
 //                   border: Border.all(
-//                     color: Colors.white.withOpacity(0.1),
+//                     color: Colors.white.withValues(alpha:0.1),
 //                     width: 1,
 //                   ),
 //                 ),
@@ -247,13 +247,13 @@
 //       decoration: BoxDecoration(
 //         gradient: LinearGradient(
 //           colors: [
-//             color.withOpacity(0.2),
-//             color.withOpacity(0.1),
+//             color.withValues(alpha:0.2),
+//             color.withValues(alpha:0.1),
 //           ],
 //         ),
 //         borderRadius: BorderRadius.circular(30),
 //         border: Border.all(
-//           color: color.withOpacity(0.5),
+//           color: color.withValues(alpha:0.5),
 //           width: 1.5,
 //         ),
 //       ),
@@ -278,7 +278,7 @@
 //                   style: GoogleFonts.poppins(
 //                     fontSize: 14,
 //                     fontWeight: FontWeight.w500,
-//                     color: Colors.white.withOpacity(0.9),
+//                     color: Colors.white.withValues(alpha:0.9),
 //                   ),
 //                 ),
 //               ],
@@ -304,10 +304,10 @@
 //     return Container(
 //       width: double.infinity,
 //       decoration: BoxDecoration(
-//         color: Colors.white.withOpacity(0.05),
+//         color: Colors.white.withValues(alpha:0.05),
 //         borderRadius: BorderRadius.circular(20),
 //         border: Border.all(
-//           color: Colors.white.withOpacity(0.1),
+//           color: Colors.white.withValues(alpha:0.1),
 //           width: 1,
 //         ),
 //       ),
@@ -350,10 +350,10 @@
 //                 padding:
 //                     const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
 //                 decoration: BoxDecoration(
-//                   color: (tech['color'] as Color).withOpacity(0.1),
+//                   color: (tech['color'] as Color).withValues(alpha:0.1),
 //                   borderRadius: BorderRadius.circular(30),
 //                   border: Border.all(
-//                     color: (tech['color'] as Color).withOpacity(0.3),
+//                     color: (tech['color'] as Color).withValues(alpha:0.3),
 //                   ),
 //                 ),
 //                 child: Row(
@@ -370,7 +370,7 @@
 //                       style: GoogleFonts.poppins(
 //                         fontSize: 14,
 //                         fontWeight: FontWeight.w500,
-//                         color: Colors.white.withOpacity(0.9),
+//                         color: Colors.white.withValues(alpha:0.9),
 //                       ),
 //                     ),
 //                   ],
@@ -437,13 +437,13 @@
 //               begin: Alignment.topLeft,
 //               end: Alignment.bottomRight,
 //               colors: [
-//                 Colors.purple.shade900.withOpacity(0.2),
-//                 Colors.blue.shade900.withOpacity(0.2),
+//                 Colors.purple.shade900.withValues(alpha:0.2),
+//                 Colors.blue.shade900.withValues(alpha:0.2),
 //               ],
 //             ),
 //             borderRadius: BorderRadius.circular(20),
 //             border: Border.all(
-//               color: Colors.white.withOpacity(0.1),
+//               color: Colors.white.withValues(alpha:0.1),
 //               width: 1,
 //             ),
 //           ),
@@ -497,10 +497,10 @@
 //                   return Container(
 //                     padding: const EdgeInsets.all(15),
 //                     decoration: BoxDecoration(
-//                       color: Colors.white.withOpacity(0.05),
+//                       color: Colors.white.withValues(alpha:0.05),
 //                       borderRadius: BorderRadius.circular(15),
 //                       border: Border.all(
-//                         color: Colors.white.withOpacity(0.1),
+//                         color: Colors.white.withValues(alpha:0.1),
 //                       ),
 //                     ),
 //                     child: Column(
@@ -549,10 +549,10 @@
 //     return Container(
 //       width: double.infinity,
 //       decoration: BoxDecoration(
-//         color: Colors.white.withOpacity(0.05),
+//         color: Colors.white.withValues(alpha:0.05),
 //         borderRadius: BorderRadius.circular(20),
 //         border: Border.all(
-//           color: Colors.white.withOpacity(0.1),
+//           color: Colors.white.withValues(alpha:0.1),
 //           width: 1,
 //         ),
 //       ),
@@ -595,7 +595,7 @@
 //               color: Colors.black,
 //               borderRadius: BorderRadius.circular(15),
 //               border: Border.all(
-//                 color: Colors.white.withOpacity(0.1),
+//                 color: Colors.white.withValues(alpha:0.1),
 //               ),
 //             ),
 //             child: ClipRRect(
@@ -652,13 +652,13 @@
 //                       border: Border.all(
 //                         color: isSelected
 //                             ? Colors.purple.shade400
-//                             : Colors.white.withOpacity(0.2),
+//                             : Colors.white.withValues(alpha:0.2),
 //                         width: 2,
 //                       ),
 //                       boxShadow: isSelected
 //                           ? [
 //                               BoxShadow(
-//                                 color: Colors.purple.withOpacity(0.4),
+//                                 color: Colors.purple.withValues(alpha:0.4),
 //                                 blurRadius: 10,
 //                                 spreadRadius: 2,
 //                               ),

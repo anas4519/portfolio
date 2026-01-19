@@ -16,7 +16,7 @@ class SocialIconButton extends StatelessWidget {
         height: 40,
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.15),
+          color: Colors.white.withValues(alpha: 0.15),
           borderRadius: BorderRadius.circular(12),
         ),
         child: SvgPicture.asset(
@@ -48,7 +48,7 @@ class SocialIconButton extends StatelessWidget {
 //             height: 40,
 //             padding: const EdgeInsets.all(8),
 //             decoration: BoxDecoration(
-//               color: Colors.white.withOpacity(0.15),
+//               color: Colors.white.withValues(alpha:0.15),
 //               borderRadius: BorderRadius.circular(12),
 //             ),
 //             child: SvgPicture.asset(

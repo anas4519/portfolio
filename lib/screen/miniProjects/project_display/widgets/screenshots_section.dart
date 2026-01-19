@@ -22,10 +22,10 @@ class _ScreenshotsSectionState extends State<ScreenshotsSection> {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.05),
+        color: Colors.white.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: Colors.white.withOpacity(0.1),
+          color: Colors.white.withValues(alpha: 0.1),
           width: 1,
         ),
       ),
@@ -68,7 +68,7 @@ class _ScreenshotsSectionState extends State<ScreenshotsSection> {
               color: Colors.black,
               borderRadius: BorderRadius.circular(15),
               border: Border.all(
-                color: Colors.white.withOpacity(0.1),
+                color: Colors.white.withValues(alpha: 0.1),
               ),
             ),
             child: ClipRRect(
@@ -125,13 +125,13 @@ class _ScreenshotsSectionState extends State<ScreenshotsSection> {
                       border: Border.all(
                         color: isSelected
                             ? Colors.purple.shade400
-                            : Colors.white.withOpacity(0.2),
+                            : Colors.white.withValues(alpha: 0.2),
                         width: 2,
                       ),
                       boxShadow: isSelected
                           ? [
                               BoxShadow(
-                                color: Colors.purple.withOpacity(0.4),
+                                color: Colors.purple.withValues(alpha: 0.4),
                                 blurRadius: 10,
                                 spreadRadius: 2,
                               ),

@@ -26,13 +26,13 @@ class Education extends StatelessWidget {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: [
-                      Colors.purple.shade900.withOpacity(0.3),
-                      Colors.blue.shade900.withOpacity(0.3),
+                      Colors.purple.shade900.withValues(alpha: 0.3),
+                      Colors.blue.shade900.withValues(alpha: 0.3),
                     ],
                   ),
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
-                    color: Colors.white.withOpacity(0.1),
+                    color: Colors.white.withValues(alpha: 0.1),
                     width: 1,
                   ),
                 ),
@@ -41,13 +41,13 @@ class Education extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(15),
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.1),
+                        color: Colors.white.withValues(alpha: 0.1),
                         shape: BoxShape.circle,
                       ),
                       child: Icon(
                         Icons.school_rounded,
                         size: 50,
-                        color: Colors.white.withOpacity(0.9),
+                        color: Colors.white.withValues(alpha: 0.9),
                       ),
                     )
                         .animate()
@@ -127,14 +127,14 @@ class Education extends StatelessWidget {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: [
-                      education.color.withOpacity(0.8),
-                      education.color.withOpacity(0.5),
+                      education.color.withValues(alpha: 0.8),
+                      education.color.withValues(alpha: 0.5),
                     ],
                   ),
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
-                      color: education.color.withOpacity(0.4),
+                      color: education.color.withValues(alpha: 0.4),
                       blurRadius: 20,
                       spreadRadius: 5,
                     ),
@@ -160,8 +160,8 @@ class Education extends StatelessWidget {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                        education.color.withOpacity(0.5),
-                        education.color.withOpacity(0.1),
+                        education.color.withValues(alpha: 0.5),
+                        education.color.withValues(alpha: 0.1),
                       ],
                     ),
                   ),
@@ -179,13 +179,13 @@ class Education extends StatelessWidget {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    Colors.white.withOpacity(0.05),
-                    Colors.white.withOpacity(0.03),
+                    Colors.white.withValues(alpha: 0.05),
+                    Colors.white.withValues(alpha: 0.03),
                   ],
                 ),
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(
-                  color: education.color.withOpacity(0.3),
+                  color: education.color.withValues(alpha: 0.3),
                   width: 1,
                 ),
               ),
@@ -193,8 +193,8 @@ class Education extends StatelessWidget {
                 data: Theme.of(context).copyWith(
                   dividerColor: Colors.transparent,
                   expansionTileTheme: ExpansionTileThemeData(
-                    iconColor: Colors.white.withOpacity(0.7),
-                    collapsedIconColor: Colors.white.withOpacity(0.7),
+                    iconColor: Colors.white.withValues(alpha: 0.7),
+                    collapsedIconColor: Colors.white.withValues(alpha: 0.7),
                   ),
                 ),
                 child: ExpansionTile(
@@ -225,7 +225,7 @@ class Education extends StatelessWidget {
                           //     vertical: 4,
                           //   ),
                           //   decoration: BoxDecoration(
-                          //     color: education.color.withOpacity(0.2),
+                          //     color: education.color.withValues(alpha:0.2),
                           //     borderRadius: BorderRadius.circular(12),
                           //   ),
                           //   child: Text(
@@ -233,7 +233,7 @@ class Education extends StatelessWidget {
                           //     style: GoogleFonts.poppins(
                           //       fontSize: 12,
                           //       fontWeight: FontWeight.w500,
-                          //       color: Colors.white.withOpacity(0.9),
+                          //       color: Colors.white.withValues(alpha:0.9),
                           //     ),
                           //   ),
                           // ),
@@ -296,7 +296,7 @@ class Education extends StatelessWidget {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.03),
+                        color: Colors.white.withValues(alpha: 0.03),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       padding: const EdgeInsets.all(15),
@@ -309,7 +309,7 @@ class Education extends StatelessWidget {
                                 Icon(
                                   Icons.star_rounded,
                                   size: 18,
-                                  color: education.color.withOpacity(0.8),
+                                  color: education.color.withValues(alpha: 0.8),
                                 ),
                                 const SizedBox(width: 8),
                                 Text(
@@ -317,7 +317,7 @@ class Education extends StatelessWidget {
                                   style: GoogleFonts.poppins(
                                     fontSize: 12,
                                     fontWeight: FontWeight.w600,
-                                    color: Colors.white.withOpacity(0.8),
+                                    color: Colors.white.withValues(alpha: 0.8),
                                   ),
                                 ),
                               ],
@@ -334,7 +334,8 @@ class Education extends StatelessWidget {
                                       child: Icon(
                                         Icons.check_circle_rounded,
                                         size: 16,
-                                        color: education.color.withOpacity(0.8),
+                                        color: education.color
+                                            .withValues(alpha: 0.8),
                                       ),
                                     ),
                                     const SizedBox(width: 12),
@@ -351,6 +352,7 @@ class Education extends StatelessWidget {
                                   ],
                                 ),
                               );
+                              // ignore: unnecessary_to_list_in_spreads
                             }).toList(),
                           ],
                           // GPA or Grade Section (if applicable)

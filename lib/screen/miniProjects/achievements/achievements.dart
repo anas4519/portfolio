@@ -80,13 +80,13 @@ class Achievements extends StatelessWidget {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: [
-                      Colors.purple.shade900.withOpacity(0.3),
-                      Colors.blue.shade900.withOpacity(0.3),
+                      Colors.purple.shade900.withValues(alpha: 0.3),
+                      Colors.blue.shade900.withValues(alpha: 0.3),
                     ],
                   ),
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
-                    color: Colors.white.withOpacity(0.1),
+                    color: Colors.white.withValues(alpha: 0.1),
                     width: 1,
                   ),
                 ),
@@ -95,13 +95,13 @@ class Achievements extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(15),
                       decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.1),
+                        color: Colors.white.withValues(alpha: 0.1),
                         shape: BoxShape.circle,
                       ),
                       child: Icon(
                         Icons.star_rounded,
                         size: 50,
-                        color: Colors.white.withOpacity(0.9),
+                        color: Colors.white.withValues(alpha: 0.9),
                       ),
                     )
                         .animate()
@@ -157,7 +157,7 @@ class Achievements extends StatelessWidget {
                   achievements: entry.value,
                   index: groupedAchievements.keys.toList().indexOf(entry.key),
                 );
-              }).toList(),
+              }),
             ],
           ),
         ),
@@ -169,10 +169,10 @@ class Achievements extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.05),
+        color: Colors.white.withValues(alpha: 0.05),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: Colors.white.withOpacity(0.1),
+          color: Colors.white.withValues(alpha: 0.1),
           width: 1,
         ),
       ),
@@ -211,7 +211,7 @@ class Achievements extends StatelessWidget {
             final index = entry.key;
             final achievement = entry.value;
             return _buildAchievementItem(achievement, index);
-          }).toList(),
+          }),
         ],
       ),
     );
@@ -225,13 +225,13 @@ class Achievements extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            achievement.color.withOpacity(0.1),
-            achievement.color.withOpacity(0.05),
+            achievement.color.withValues(alpha: 0.1),
+            achievement.color.withValues(alpha: 0.05),
           ],
         ),
         borderRadius: BorderRadius.circular(15),
         border: Border.all(
-          color: achievement.color.withOpacity(0.3),
+          color: achievement.color.withValues(alpha: 0.3),
         ),
       ),
       child: Material(
@@ -258,7 +258,7 @@ class Achievements extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: achievement.color.withOpacity(0.2),
+                    color: achievement.color.withValues(alpha: 0.2),
                     shape: BoxShape.circle,
                   ),
                   child: Icon(
@@ -290,7 +290,7 @@ class Achievements extends StatelessWidget {
                               vertical: 4,
                             ),
                             decoration: BoxDecoration(
-                              color: achievement.color.withOpacity(0.2),
+                              color: achievement.color.withValues(alpha: 0.2),
                               borderRadius: BorderRadius.circular(12),
                             ),
                             child: Text(
@@ -298,7 +298,7 @@ class Achievements extends StatelessWidget {
                               style: GoogleFonts.poppins(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w500,
-                                color: Colors.white.withOpacity(0.9),
+                                color: Colors.white.withValues(alpha: 0.9),
                               ),
                             ),
                           ),
@@ -346,13 +346,13 @@ class Achievements extends StatelessWidget {
             style: GoogleFonts.poppins(
               fontSize: 18,
               fontWeight: FontWeight.w600,
-              color: Colors.white.withOpacity(0.8),
+              color: Colors.white.withValues(alpha: 0.8),
             ),
           ),
           const SizedBox(height: 10),
           ...achievements.map((achievement) {
             return _buildCompactAchievementItem(achievement);
-          }).toList(),
+          }),
         ],
       ),
     ).animate().fadeIn(
@@ -366,10 +366,10 @@ class Achievements extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 10),
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.03),
+        color: Colors.white.withValues(alpha: 0.03),
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
-          color: Colors.white.withOpacity(0.1),
+          color: Colors.white.withValues(alpha: 0.1),
         ),
       ),
       child: Row(
@@ -385,7 +385,7 @@ class Achievements extends StatelessWidget {
               achievement.title,
               style: GoogleFonts.poppins(
                 fontSize: 14,
-                color: Colors.white.withOpacity(0.9),
+                color: Colors.white.withValues(alpha: 0.9),
               ),
             ),
           ),
