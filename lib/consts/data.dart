@@ -203,12 +203,21 @@ final List<JobExperience> education = [
 
 final List<JobExperience> jobExperiences = [
   JobExperience(
+    color: Colors.green.shade700,
+    location: "New Delhi",
+    title: 'Software Engineer Intern',
+    company: 'Chaayos',
+    startDate: 'March 2026',
+    endDate: 'Present',
+    bulletPoints: [],
+  ),
+  JobExperience(
     color: Colors.pink,
     location: "Remote",
     title: 'Flutter Developer Intern',
     company: 'Verbose Techlabs LLP',
-    startDate: 'July 2024',
-    endDate: 'Present',
+    startDate: 'July 2025',
+    endDate: 'March 2026',
     bulletPoints: [
       "Led development efforts on 10+ production Flutter applications spanning video streaming, mobile gaming, social networking, and e-commerce platforms",
       "Implemented complex native features including real-time push notifications and iOS Live Activities using Flutter platform channels and native SDKs",
