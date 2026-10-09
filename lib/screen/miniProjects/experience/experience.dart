@@ -181,34 +181,46 @@ class Experience extends StatelessWidget {
             ),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 12),
-              child: Row(
+              child: Wrap(
+                spacing: 15,
+                runSpacing: 6,
+                crossAxisAlignment: WrapCrossAlignment.center,
                 children: [
-                  Icon(
-                    Icons.calendar_today_rounded,
-                    size: 14,
-                    color: Colors.grey.shade500,
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        Icons.calendar_today_rounded,
+                        size: 14,
+                        color: Colors.grey.shade500,
+                      ),
+                      const SizedBox(width: 5),
+                      Text(
+                        '${experience.startDate} - ${experience.endDate}',
+                        style: GoogleFonts.poppins(
+                          fontSize: 13,
+                          color: Colors.grey.shade400,
+                        ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(width: 5),
-                  Text(
-                    '${experience.startDate} - ${experience.endDate}',
-                    style: GoogleFonts.poppins(
-                      fontSize: 13,
-                      color: Colors.grey.shade400,
-                    ),
-                  ),
-                  const SizedBox(width: 15),
-                  Icon(
-                    Icons.location_on_outlined,
-                    size: 14,
-                    color: Colors.grey.shade500,
-                  ),
-                  const SizedBox(width: 5),
-                  Text(
-                    experience.location,
-                    style: GoogleFonts.poppins(
-                      fontSize: 13,
-                      color: Colors.grey.shade400,
-                    ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        Icons.location_on_outlined,
+                        size: 14,
+                        color: Colors.grey.shade500,
+                      ),
+                      const SizedBox(width: 5),
+                      Text(
+                        experience.location,
+                        style: GoogleFonts.poppins(
+                          fontSize: 13,
+                          color: Colors.grey.shade400,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),

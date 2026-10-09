@@ -93,7 +93,7 @@ class _AboutMeState extends State<AboutMe> {
 
                     // Role/Title
                     Text(
-                      "Flutter Developer",
+                      "Software Engineer",
                       style: GoogleFonts.poppins(
                         fontSize: 18,
                         fontWeight: FontWeight.w400,

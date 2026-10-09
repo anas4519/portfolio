@@ -41,9 +41,8 @@ class HomePage extends StatelessWidget {
                 decoration: const BoxDecoration(
                   color: Color(0xFF000000),
                   image: DecorationImage(
-                    image: AssetImage('assets/images/batman7.jpg'),
+                    image: AssetImage('assets/images/wallpaper.jpg'),
                     fit: BoxFit.cover,
-                    opacity: 0.2,
                   ),
                 ),
               );
@@ -98,15 +97,10 @@ class HomePage extends StatelessWidget {
                             device: currentState.currentDevice,
                             screen: Container(
                               decoration: const BoxDecoration(
-                                gradient: LinearGradient(
-                                  begin: Alignment.topCenter,
-                                  end: Alignment.bottomCenter,
-                                  colors: [
-                                    Color(0xFF1a1a1a), // Dark gray
-                                    Color(0xFF0f0f0f), // Darker gray
-                                    Color(0xFF060606), // Near black
-                                  ],
-                                  stops: [0.0, 0.6, 1.0],
+                                color: Color(0xFF060606),
+                                image: DecorationImage(
+                                  image: AssetImage('assets/images/phone_wallpaper.jpg'),
+                                  fit: BoxFit.cover,
                                 ),
                               ),
                               child: ScreenWrapper(
@@ -168,7 +162,7 @@ class HomePage extends StatelessWidget {
                                 childW: Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: AutoSizeText(
-                                    'Flutter Developer + Backend developer',
+                                    'Software Engineer @ Chaayos',
                                     style: GoogleFonts.inter(
                                       fontSize: 16,
                                       color:
@@ -186,7 +180,7 @@ class HomePage extends StatelessWidget {
                               ),
                               SizedBox(height: 15 * theme.heightRatio),
                               AutoSizeText(
-                                '''I’m a Flutter developer and tech enthusiast pursuing B.Tech in IT. I’ve built full-stack apps like WizerAI, CardVault, and VerseVibe using Flutter, Node.js, Supabase, and Gemini API. I am interning at Verbose Techlabs LLP and love building sleek, high-performance apps. I’m also active on LeetCode and Codeforces (Pupil, max 1233), always sharpening my problem-solving skills.''',
+                                '''I’m a Software Engineer at Chaayos, working across Java/Spring Boot backends and React. I’ve also built full-stack apps like WizerAI, CardVault, and VerseVibe using Flutter, Node.js, Supabase, and Gemini API. I love building sleek, high-performance apps, and I’m active on LeetCode and Codeforces (Pupil, max 1233), always sharpening my problem-solving skills.''',
                                 style: GoogleFonts.inter(
                                   fontSize: 14,
                                   color: Colors.white.withValues(alpha: 0.8),
@@ -457,15 +451,10 @@ class HomePage extends StatelessWidget {
               device: currentState.currentDevice,
               screen: Container(
                 decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Color(0xFF1a1a1a), // Dark gray
-                      Color(0xFF0f0f0f), // Darker gray
-                      Color(0xFF060606), // Near black
-                    ],
-                    stops: [0.0, 0.6, 1.0],
+                  color: Color(0xFF060606),
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/phone_wallpaper.jpg'),
+                    fit: BoxFit.cover,
                   ),
                 ),
                 child: ScreenWrapper(childG: currentState.currentScreen),

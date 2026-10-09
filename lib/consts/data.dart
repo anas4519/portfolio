@@ -186,10 +186,10 @@ final List<JobExperience> education = [
     color: Colors.red,
     location: "New Delhi, India",
     title: 'B.Tech, Information Technology',
-    company: 'Bhagwan Parshuram Institure of Technology',
+    company: 'Bhagwan Parshuram Institute of Technology',
     startDate: 'November 2022',
-    endDate: 'Present',
-    bulletPoints: ["Currently in the third year of my college!", "CGPA : 8.4"],
+    endDate: 'September 2026',
+    bulletPoints: ["CGPA : 8.15"],
   ),
   JobExperience(
       color: Colors.blue,
@@ -205,11 +205,28 @@ final List<JobExperience> jobExperiences = [
   JobExperience(
     color: Colors.green.shade700,
     location: "New Delhi",
+    title: 'Software Engineer',
+    company: 'Chaayos',
+    startDate: 'September 2026',
+    endDate: 'Present',
+    bulletPoints: [
+      "Built an org-structure management module end-to-end with Spring Boot REST APIs, JUnit tests and an admin UI.",
+      "Developed a bitemporal assembler-priority service for hourly café shift rostering.",
+    ],
+  ),
+  JobExperience(
+    color: Colors.teal,
+    location: "New Delhi",
     title: 'Software Engineer Intern',
     company: 'Chaayos',
     startDate: 'March 2026',
-    endDate: 'Present',
-    bulletPoints: [],
+    endDate: 'September 2026',
+    bulletPoints: [
+      "Engineered batch metric APIs for an internal BI dashboard (React, Python), grouping up to 50 metrics into 3 or fewer parallel stored-procedure calls, and added SSO session login.",
+      "Developed Spring Boot schedulers and REST APIs to sync café delivery hours with Swiggy and Zomato, and to expose purchase, sales and vendor data to the ERP.",
+      "Shipped loyalty-voucher redemption across the café POS (React) and the customer React Native app.",
+      "Built multi-account social media analytics on ClickHouse over the Meta Marketing API.",
+    ],
   ),
   JobExperience(
     color: Colors.pink,
@@ -306,10 +323,15 @@ const String resumeLink =
 const String email = "nadeemanas617@gmail.com";
 const String emailLink = "mailto:nadeemanas617@gmail.com";
 String introduction =
-    "Welcome to my portfolio website, this website is highly inspired High Coder and Pawan Kumar.\n\n I am a 3rd year B.Tech student in Information Technology, seeking a software development internship to leverage skills in Java, Flutter and Dart.\nEnthusiastic and fast learner, eager to apply academic knowledge and problem-solving abilities to contribute to innovative projects. With a strong programming foundation, proactive attitude, and openness to learning new technologies, I aim to support and drive efficiency within the development team.\n\nYou can check out my projects using the other apps on the Home Screen.";
+    "Welcome to my portfolio website, this website is highly inspired High Coder and Pawan Kumar.\n\n I am a Software Engineer at Chaayos and a B.Tech graduate in Information Technology. I build backend services with Java and Spring Boot, web apps with React, and cross-platform mobile apps with Flutter.\nI enjoy solving complex problems, learning new technologies quickly, and shipping reliable software that people actually use.\n\nYou can check out my projects using the other apps on the Home Screen.";
 
 List<SkillsModel> skills = [
   SkillsModel(skillName: "Flutter", colorS: Colors.blue, iconPath: "random"),
+  SkillsModel(skillName: "Spring Boot", colorS: Colors.green),
+  SkillsModel(skillName: "React", colorS: Colors.lightBlue),
+  SkillsModel(skillName: "Python", colorS: Colors.yellow),
+  SkillsModel(skillName: "ClickHouse", colorS: Colors.amber),
+  SkillsModel(skillName: "Supabase", colorS: Colors.green),
   SkillsModel(
     skillName: "Git/Github",
     colorS: Colors.pink,
