@@ -3,6 +3,7 @@ import 'package:awesome_portfolio/models/color_model.dart';
 import 'package:awesome_portfolio/models/device_model.dart';
 import 'package:awesome_portfolio/screen/miniProjects/achievements/achievements.dart';
 import 'package:awesome_portfolio/screen/miniProjects/project_display/cardvault.dart';
+import 'package:awesome_portfolio/screen/miniProjects/project_display/commute.dart';
 import 'package:awesome_portfolio/screen/miniProjects/education/education.dart';
 import 'package:awesome_portfolio/screen/miniProjects/experience/experience.dart';
 import 'package:awesome_portfolio/screen/miniProjects/project_display/versevibe.dart';
@@ -169,6 +170,11 @@ List<AppModel> apps = [
       color: const Color.fromARGB(255, 24, 19, 27),
       assetPath: "assets/icons/wizerai.png",
       screen: const WizerAI()),
+  AppModel(
+      title: "Commute",
+      color: Colors.black,
+      assetPath: "assets/icons/commute.png",
+      screen: const Commute()),
   AppModel(
       title: "Achievements",
       color: Colors.white,

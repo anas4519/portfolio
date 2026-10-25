@@ -136,6 +136,7 @@ class _ProjectBuilderState extends State<ProjectBuilder> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        if (widget.psLink.isNotEmpty) ...[
                         _buildActionButton(
                           icon: Icons.play_arrow_rounded,
                           label: "Play Store",
@@ -150,6 +151,7 @@ class _ProjectBuilderState extends State<ProjectBuilder> {
                           },
                         ),
                         const SizedBox(width: 15),
+                        ],
                         _buildActionButton(
                           icon: Icons.code_rounded,
                           label: "GitHub",
@@ -290,7 +292,7 @@ class _ProjectBuilderState extends State<ProjectBuilder> {
               const SizedBox(height: 30),
 
               // Screenshots Section
-              _buildScreenshotsSection(),
+              if (widget.screenshots.isNotEmpty) _buildScreenshotsSection(),
             ],
           ),
         ),
