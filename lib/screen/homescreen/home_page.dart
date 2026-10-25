@@ -180,7 +180,7 @@ class HomePage extends StatelessWidget {
                               ),
                               SizedBox(height: 15 * theme.heightRatio),
                               AutoSizeText(
-                                '''I’m a Software Engineer at Chaayos, working across Java/Spring Boot backends and React. I’ve also built full-stack apps like WizerAI, CardVault, and VerseVibe using Flutter, Node.js, Supabase, and Gemini API. I love building sleek, high-performance apps, and I’m active on LeetCode and Codeforces (Pupil, max 1233), always sharpening my problem-solving skills.''',
+                                '''Software Engineer at Chaayos, building Java/Spring Boot services and React tools used across 200+ cafés. On the side I ship Flutter apps end to end, most recently Commute, a route-and-ride comparer with live Google Routes data. I'm into clean backends, fast UIs, and DSA (Codeforces Pupil, max 1233).''',
                                 style: GoogleFonts.inter(
                                   fontSize: 14,
                                   color: Colors.white.withValues(alpha: 0.8),
@@ -251,6 +251,12 @@ class HomePage extends StatelessWidget {
                                   onTap: () =>
                                       currentState.launchInBrowser(emailLink),
                                 ),
+                                // Resume
+                                SocialIconButton(
+                                  asset: 'assets/logos/resume.svg',
+                                  onTap: () =>
+                                      currentState.launchInBrowser(resumeLink),
+                                ),
                               ],
                             ),
                           ],
@@ -285,14 +291,14 @@ class HomePage extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(12),
                                     ),
                                     child: const Icon(
-                                      Icons.check_circle,
+                                      Icons.shop,
                                       color: Colors.white,
                                       size: 24,
                                     ),
                                   ),
                                   SizedBox(height: 6 * theme.heightRatio),
                                   AutoSizeText(
-                                    '5+',
+                                    '3',
                                     style: GoogleFonts.exo(
                                       fontSize: 32,
                                       color: Colors.white,
@@ -303,7 +309,7 @@ class HomePage extends StatelessWidget {
                                   ),
                                   SizedBox(height: 2 * theme.heightRatio),
                                   AutoSizeText(
-                                    'Apps\nbuilt',
+                                    'Apps on\nPlay Store',
                                     style: GoogleFonts.inter(
                                       fontSize: 14,
                                       color:
@@ -338,14 +344,14 @@ class HomePage extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(12),
                                     ),
                                     child: const Icon(
-                                      Icons.dashboard,
+                                      Icons.local_cafe,
                                       color: Colors.white,
                                       size: 24,
                                     ),
                                   ),
                                   SizedBox(height: 6 * theme.heightRatio),
                                   AutoSizeText(
-                                    '10+',
+                                    '200+',
                                     style: GoogleFonts.exo(
                                       fontSize: 32,
                                       color: Colors.white,
@@ -356,7 +362,7 @@ class HomePage extends StatelessWidget {
                                   ),
                                   SizedBox(height: 2 * theme.heightRatio),
                                   AutoSizeText(
-                                    'Overall\nProjects',
+                                    'Cafés running\nmy code',
                                     style: GoogleFonts.inter(
                                       fontSize: 14,
                                       color:
@@ -391,14 +397,14 @@ class HomePage extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(12),
                                     ),
                                     child: const Icon(
-                                      Icons.calculate_rounded,
+                                      Icons.code_rounded,
                                       color: Colors.white,
                                       size: 24,
                                     ),
                                   ),
                                   SizedBox(height: 6 * theme.heightRatio),
                                   AutoSizeText(
-                                    '1000+',
+                                    '789',
                                     style: GoogleFonts.exo(
                                       fontSize: 32,
                                       color: Colors.white,
@@ -409,7 +415,7 @@ class HomePage extends StatelessWidget {
                                   ),
                                   SizedBox(height: 2 * theme.heightRatio),
                                   AutoSizeText(
-                                    'Problems\nSolved',
+                                    'LeetCode\nSolved',
                                     style: GoogleFonts.inter(
                                       fontSize: 14,
                                       color:
